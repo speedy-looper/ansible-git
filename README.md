@@ -1,4 +1,4 @@
-# Git
+# Ansible Role: ZSH
 
 Install git package. Can configure `.gitconfig` if defined as bellow.
 
