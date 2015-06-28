@@ -1,5 +1,7 @@
 # Ansible Role: ZSH
 
+[![Build Status](https://travis-ci.org/loliee/ansible-git.svg?branch=master)](https://travis-ci.org/loliee/ansible-git)
+
 Install git package. Can configure `.gitconfig` if defined as bellow.
 
 [Official Website](http://git-scm.com/).
