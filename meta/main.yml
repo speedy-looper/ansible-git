@@ -2,7 +2,7 @@ dependencies: []
 
 galaxy_info:
   author: Maxime Loliée
-  description: Install and set up git package.
+  description: Install and set up git package for Centos/Debian/Ubuntu and OSX if brew available.
   license: "license (MIT)"
   min_ansible_version: 1.8
   platforms:
@@ -18,3 +18,6 @@ galaxy_info:
   - name: Darwin
     versions:
     - all
+  categories:
+    - development
+    - system
