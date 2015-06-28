@@ -31,3 +31,13 @@
   when: >
     (item.value.has_key('git_gitfiles_directory') and item.value.git_gitfiles_directory) and not
     (item.value.has_key('git_gitconfig_content') and item.value.git_gitconfig_content)
+
+- name: Download ~/.gitconfig.
+  get_url:
+      url={{ item.value.git_gitconfig_url }}
+      dest=~{{ item.key }}/.gitconfig
+      owner={{ item.key }}
+  with_dict: __users__ | default({})
+  when: >
+    (item.value.has_key('git_gitconfig_url') and item.value.git_gitconfig_url) and not
+    (item.value.has_key('git_gitconfig_content') and item.value.git_gitconfig_content)

@@ -29,7 +29,12 @@ script:
   # Check role to configure gitconfig with yaml var
   - ansible-playbook -i ./tests/inventory tests/playbooks/configure_from_var.yml --connection=local --sudo
   - rspec tests/spec/configure_from_var_spec.rb
-  - rm /home/mtester/.gitconfig
+  - sudo rm -f /home/mtester/.gitconfig
+
+  # Check role to configure git by uploading config files
+  - ansible-playbook -i tests/inventory ./tests/playbooks/configure_from_url.yml --connection=local --sudo
+  - rspec tests/spec/configure_from_url_spec.rb
+  - sudo rm -f /home/mtester/.gitconfig
 
   # Check role to configure git by uploading config files
   - ansible-playbook -i tests/inventory ./tests/playbooks/configure_from_dir.yml --connection=local --sudo

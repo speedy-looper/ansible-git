@@ -1,0 +1,11 @@
+---
+# Test playbook: package install and download ~/.gitconfig file.
+#
+- hosts: localhost
+  remote_user: root
+  vars:
+    __users__:
+      mtester:
+        git_gitconfig_url: https://raw.githubusercontent.com/loliee/dotfiles/master/.gitconfig
+  roles:
+    - ansible-git

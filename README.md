@@ -27,7 +27,8 @@ __users__:
 
 | Option                   | Type     | Comments                                                    |
 |--------------------------|----------|-------------------------------------------------------------|
-| git_gitconfig_content    | string   | Lines to add in `~/.gitconfig`. Or use option bellow to copy files directly.|
+| git_gitconfig_content    | string   | Lines to add in `~/.gitconfig`. Or others options.          |
+| git_gitconfig_url        | string   | Download url of `.gitconfig` file.                          |
 | git_gitfiles_directory   | string   | Directory containing git files to upload in user directory. |
 
 ## Example Playbook
@@ -57,4 +58,4 @@ Require [serverspec](http://serverspec.org/), check [.travis.yml](.travis.yml) f
 
 ## Licence
 
-MIT © [Maxime Loliée](http://loliee.com/)
+MIT © [Maxime Loliée](https://github.com/loliee/)
