@@ -1,0 +1,33 @@
+---
+# Install git package
+
+- include: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: Darwin.yml
+  when: ansible_os_family == 'Darwin'
+
+- name: Generate ~/.gitconfig.
+  template:
+    mode=0644
+    src=gitconfig.j2
+    owner={{ item.key }}
+    dest=~{{ item.key }}/.gitconfig
+  with_dict: __users__ | default({})
+  when: (item.value.has_key('git_gitconfig_content') and item.value.git_gitconfig_content)
+
+- name: Upload git files.
+  copy:
+      src=./{{ item.value.git_gitfiles_directory }}/
+      dest=~{{ item.key }}/
+      owner={{ item.key }}
+      directory_mode=yes
+      force=yes
+      mode=0755
+  with_dict: __users__ | default({})
+  when: >
+    (item.value.has_key('git_gitfiles_directory') and item.value.git_gitfiles_directory) and not
+    (item.value.has_key('git_gitconfig_content') and item.value.git_gitconfig_content)

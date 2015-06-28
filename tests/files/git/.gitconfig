@@ -1,0 +1,14 @@
+[user]
+    name = Tester tester
+    email = dude@tester.com
+[core]
+    editor = vim
+    excludesfile = /home/mtester/.gitignore-global
+[color]
+    ui = true
+[merge]
+    tool = vimdiff
+[rebase]
+    autosquash = true
+[fetch]
+    prune = true

@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Maxime Loliee
+  description: Install git package.
+  min_ansible_version: 1.8
+  platforms:
+    - name: CentOS
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  categories:
+    - scm

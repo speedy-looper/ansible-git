@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+
+{%- for username, options in __users__.iteritems() %}
+  {%- if username == item.key %}
+
+{{ options.git_gitconfig_content }}
+
+  {% endif %}
+{% endfor %}
