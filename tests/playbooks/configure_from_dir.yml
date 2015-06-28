@@ -6,6 +6,6 @@
   vars:
     __users__:
       mtester:
-        git_gitconfig_content: ../tests/files/git/
+        git_gitfiles_directory: ../tests/files/git/
   roles:
     - ansible-git
