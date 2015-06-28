@@ -1,0 +1,11 @@
+---
+# Test playbook: package install and upload ~/.gitconfig and gitignore-global files.
+#
+- hosts: localhost
+  remote_user: root
+  vars:
+    __users__:
+      mtester:
+        git_gitfiles_directory: ../tests/files/git/
+  roles:
+    - ansible-git

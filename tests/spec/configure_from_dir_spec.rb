@@ -8,10 +8,10 @@ end
 
 describe file('/home/mtester/.gitconfig') do
   it { should be_file }
-  its(:content) { should_not contain /email = dude@tester\.com/ }
+  its(:content) { should contain 'email = dude@tester.com' }
 end
 
-describe file('/home/mtester/.gitconfig-global') do
+describe file('/home/mtester/.gitignore-global') do
   it { should be_file }
-  its(:content) { should_not contain /\.DS_Store/ }
+  its(:content) { should contain '.DS_Store' }
 end
