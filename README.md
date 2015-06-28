@@ -1,6 +1,6 @@
 # Git
 
-Install git package. Can onfigure `.gitconfig` if defined as bellow.
+Install git package. Can configure `.gitconfig` if defined as bellow.
 
 [Official Website](http://git-scm.com/).
 
@@ -35,14 +35,18 @@ __users__:
 The following playbook will install prezto for root user.
 
 ``` yaml
-# ./tests/main.yml
+---
+# ./tests/playbooks/main.yml
 
 - hosts: localhost
   remote_user: root
   vars:
     __users__:
-      root:
-        prezto_install: Yes
+      mloliee:
+        git_gitfiles_directory: ./files/git/
+  roles:
+    - ansible-git
+
 ```
 
 Run test, make sure ansible-zsh and ansible-prezto are in your role path.
