@@ -1,0 +1,14 @@
+---
+# Test playbook: package install and ~/.gitconfig generation.
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    __users__:
+      mtester:
+        git_gitconfig_content: |
+          [user]
+            name = Tester tester
+            email = thedude@tester.com
+  roles:
+    - ansible-git
