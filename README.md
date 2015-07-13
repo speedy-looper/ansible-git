@@ -1,4 +1,4 @@
-# Ansible Role: ZSH
+# Ansible Role: Git
 
 [![Build Status](https://travis-ci.org/loliee/ansible-git.svg?branch=master)](https://travis-ci.org/loliee/ansible-git)
 
